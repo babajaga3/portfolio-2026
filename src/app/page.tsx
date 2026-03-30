@@ -11,7 +11,7 @@ import { useTabs } from "@/stores/tabs";
 import draggable from "../../public/draggable.svg";
 
 export default function HomePage() {
-  const activeTab = useTabs((state) => state.activeTab);
+	const activeTab = useTabs((state) => state.activeTab);
 
 	return (
 		<main className="flex min-h-screen flex-col items-start justify-start gap-4 bg-[#fefeff] p-4 font-mono text-[#152c49] underline-offset-6">
@@ -21,9 +21,9 @@ export default function HomePage() {
 				height={200}
 				src={draggable}
 				width={200}
-      />
+			/>
 
-      <WindowsTab
+			<WindowsTab
 				className={cn("fixed top-40 right-10", activeTab ? "z-1" : "z-0")}
 				title="Kodak UltraMax 400, Austria"
 			>
@@ -37,22 +37,6 @@ export default function HomePage() {
 				/>
 			</WindowsTab>
 
-			{/*<WindowsTab
-				className={cn("fixed right-20 bottom-40", activeTab ? "z-1" : "z-0")}
-				title="Kodak Gold 200, Bulgaria"
-			>
-				<Image
-					alt="Tom's Portfolio"
-					className="pointer-events-none p-2 hover:cursor-all-scroll"
-					height={650}
-					loading="eager"
-					src="https://cdn.tomabourov.com/portfolio/002.jpg"
-					width={650}
-				/>
-			</WindowsTab>*/}
-
-			{/*<Cherga />*/}
-
 			<div className="fixed top-0 right-0 flex flex-col items-end justify-between gap-2 p-4">
 				<Clock
 					className="text-4xl"
@@ -65,7 +49,7 @@ export default function HomePage() {
 				<span>-0,4 Cº</span>
 			</div>
 
-			<nav className="flex flex-row items-center justify-between gap-8 pl-16 pb-8 pt-12">
+			<nav className="flex flex-row items-center justify-between gap-8 pt-12 pb-8 pl-16">
 				<Link className="hover:underline" href="/about">
 					/contact
 				</Link>
