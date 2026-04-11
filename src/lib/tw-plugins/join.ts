@@ -4,7 +4,7 @@
 
 import plugin from 'tailwindcss/plugin'
 
-module.exports = plugin.withOptions(() => ({ matchUtilities }) => {
+export default plugin.withOptions(() => ({ matchUtilities }) => {
   matchUtilities({
     join: value => ({
       [`@apply ${value.replaceAll(',', ' ')}`]: {}

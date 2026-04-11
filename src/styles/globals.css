@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-@plugin "tailwindcss-animate";
 @plugin "../lib/tw-plugins/join.ts";
 
 @custom-variant dark (&:is(.dark *));
