@@ -1,13 +1,76 @@
-'use client'
+"use client";
 
-import type { MDXEditorMethods, MDXEditorProps } from "@mdxeditor/editor"
-import dynamic from "next/dynamic"
-import { forwardRef } from "react"
+import Link from "next/link";
+import { PageLayout } from "@/components/layout";
 
-const MarkdownEditor = dynamic(() => import("@/components/markdown-editor"), { ssr: false })
-
-// const MarkdownEditor = forwardRef<MDXEditorMethods | null, MDXEditorProps>((props, ref) => <Editor {...props} editorRef={ref} />)
 
 export default function ContactPage() {
-  return <MarkdownEditor markdown="hello there" />
+  return (
+    <PageLayout.Main>
+      <PageLayout.Nav>
+        <Link className="hover:underline" href="/about">
+          /contact
+        </Link>
+        <Link className="hover:underline" href="/projects">
+          /projects
+        </Link>
+        <Link className="hover:underline" href="/contact">
+          /archive
+        </Link>
+      </PageLayout.Nav>
+
+      <PageLayout.Pane>
+        <PageLayout.Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          mollitia ex ipsa corporis quis! Eligendi consequatur maiores iusto quia
+          voluptatibus voluptate tenetur accusantium fuga, suscipit ipsum numquam
+          aliquid mollitia autem.
+        </PageLayout.Text>
+        <PageLayout.Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          mollitia ex ipsa corporis quis! Eligendi consequatur maiores iusto quia
+          voluptatibus voluptate tenetur accusantium fuga, suscipit ipsum numquam
+          aliquid mollitia autem.
+        </PageLayout.Text>
+        <PageLayout.Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          mollitia ex ipsa corporis quis! Eligendi consequatur maiores iusto quia
+          voluptatibus voluptate tenetur accusantium fuga, suscipit ipsum numquam
+          aliquid mollitia autem.
+        </PageLayout.Text>
+        <PageLayout.Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          mollitia ex ipsa corporis quis! Eligendi consequatur maiores iusto quia
+          voluptatibus voluptate tenetur accusantium fuga, suscipit ipsum numquam
+          aliquid mollitia autem.
+        </PageLayout.Text>
+      </PageLayout.Pane>
+      <PageLayout.Pane>
+        <PageLayout.Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          mollitia ex ipsa corporis quis! Eligendi consequatur maiores iusto quia
+          voluptatibus voluptate tenetur accusantium fuga, suscipit ipsum numquam
+          aliquid mollitia autem.
+        </PageLayout.Text>
+        <PageLayout.Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          mollitia ex ipsa corporis quis! Eligendi consequatur maiores iusto quia
+          voluptatibus voluptate tenetur accusantium fuga, suscipit ipsum numquam
+          aliquid mollitia autem.
+        </PageLayout.Text>
+        <PageLayout.Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          mollitia ex ipsa corporis quis! Eligendi consequatur maiores iusto quia
+          voluptatibus voluptate tenetur accusantium fuga, suscipit ipsum numquam
+          aliquid mollitia autem.
+        </PageLayout.Text>
+        <PageLayout.Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+          mollitia ex ipsa corporis quis! Eligendi consequatur maiores iusto quia
+          voluptatibus voluptate tenetur accusantium fuga, suscipit ipsum numquam
+          aliquid mollitia autem.
+        </PageLayout.Text>
+      </PageLayout.Pane>
+    </PageLayout.Main>
+  );
 }
