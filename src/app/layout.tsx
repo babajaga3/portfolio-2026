@@ -1,3 +1,4 @@
+import QueryProvider from "@/lib/react-query";
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
@@ -48,7 +49,10 @@ export default function RootLayout({
 			className={`${geist.variable} ${ebGaramond.variable} ${pressStart.variable} ${windows95.variable}`}
 			lang="en"
 		>
-			<body>{children}</body>
+      <body>
+        <QueryProvider>
+          {children}
+        </QueryProvider></body>
 		</html>
 	);
 }
