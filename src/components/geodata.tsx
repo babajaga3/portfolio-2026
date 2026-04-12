@@ -1,14 +1,26 @@
+import { useQuery } from "@tanstack/react-query";
 import Clock from "react-live-clock";
-import { cn } from "@/lib/utils";
-import { useQuery } from '@tanstack/react-query'
 import { getWeather } from "@/api/weather";
+import { cn } from "@/lib/utils";
+import { weatherCodes } from "@/lib/weather";
 
 export function Geodata() {
   const { data: weather } = useQuery({
-    queryKey: ['weather'],
+    queryKey: ["weather"],
     queryFn: getWeather,
-  })
-  
+  });
+
+  const temp = weather?.current()?.variables(0)?.value().toFixed(1);
+  const isDay = weather?.current()?.variables(1)?.value().toFixed(1).charAt(0);
+  const weatherCode = weather
+    ?.current()
+    ?.variables(2)
+    ?.value()
+    .toFixed(1)
+    .charAt(0);
+
+  console.log("weather", isDay);
+
   return (
     <div
       className={cn(
@@ -23,7 +35,10 @@ export function Geodata() {
         timezone="Europe/Sofia"
       />
       <span>Sofia, BG</span>
-      <span>{weather?.current()?.variables(0)?.value().toFixed(1)} Cº</span>
+      <div className="flex items-center gap-1">
+        <div>{weatherCodes(isDay ?? "")[weatherCode ?? ""]?.icon}</div>
+        <span>{temp} Cº</span>
+      </div>
     </div>
   );
 }
