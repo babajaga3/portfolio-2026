@@ -9,6 +9,6 @@ export async function getWeather() {
   }
 
   const url = "https://api.open-meteo.com/v1/forecast";
-  return (await fetchWeatherApi(url, params))[0];
 
+  return (await fetchWeatherApi(url, params))[0];
 }
