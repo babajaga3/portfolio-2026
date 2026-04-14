@@ -19,7 +19,8 @@ export function Geodata() {
     .toFixed(1)
     .charAt(0);
 
-  console.log("weather", isDay);
+  // TODO make loading animation that keeps the text scrambled until it loads
+  // - unscramble animation when it loads
 
   return (
     <div
